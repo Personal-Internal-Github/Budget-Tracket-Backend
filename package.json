@@ -10,6 +10,7 @@
   "author": "Ahmad Fikri",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "joi": "^17.13.1",
     "mysql2": "^3.9.8",
