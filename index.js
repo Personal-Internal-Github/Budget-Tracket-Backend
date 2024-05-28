@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
+
 const app = express();
 
 app.use(express.json());
@@ -12,6 +13,6 @@ app.get('/test', (req, res) => {
 
 const route = require('./routes');
 app.use('/income', route.incomeAPI);
-app.use('/expanse', route.expanseAPI);
+app.use('/expense', route.expanseAPI);
 
 app.listen(3000, () => console.log('Successfully connected to server!'));
