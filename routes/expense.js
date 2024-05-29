@@ -17,7 +17,7 @@ router.get('/getExpenseByMonth', (req, res) => {
   db.query('SELECT * FROM expense WHERE MONTH(TIMESTAMP) = MONTH(CURDATE());', (dbError, dbResult) => {
     if (dbError) return res.status(501).send({response: 'ERROR', message: dbError});
 
-    res.send({response: 'Success', message: dbResult});
+    res.send({response: 'Success', totalExpenseAmount: Object.values(dbResult[0]) });
   })
 });
 
