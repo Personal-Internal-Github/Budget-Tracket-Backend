@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "netlify deploy --prod"
   },
   "author": "Ahmad Fikri",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.21",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "gh-pages": "^6.1.1",
     "joi": "^17.13.1",
     "mysql2": "^3.9.8",
     "nodemon": "^3.1.1"
-  }
+  },
+  "homepage": "https://Aiman1017.github.io/Budget-Tracket-Backend"
 }
