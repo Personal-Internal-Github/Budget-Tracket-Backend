@@ -1,12 +1,13 @@
 const mysql = require('mysql2');
+require('dotenv').config();
 
 const db_config = {
   localPool: mysql.createPool({
-    host: '127.0.0.1',
+    host: process.env.DB_HOSTNAME,
     port: 3306,
-    user: 'root',
-    password: '1234',
-    database: 'budget_tracker'
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
   })
 }
 
