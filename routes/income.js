@@ -21,10 +21,11 @@ router.get('/getIncomeByMonth', (req, res) => {
 
 router.post('/addIncome', (req, res) => {
   const requestData = {
-    incomeValue: req.body.incomeValue
+    incomeValue: req.body.incomeValue,
+    incomeDescription: req.body.incomeDescription
   }
 
-  db.query('INSERT INTO INCOME(income) VALUES(?)', requestData.incomeValue, (dbError, dbResult) => {
+  db.query('INSERT INTO INCOME(income, income_description) VALUES(?,?)', [requestData.incomeValue, requestData.incomeDescription], (dbError, dbResult) => {
     if (dbError) return res.status(501).send({response: 'ERROR', message: dbError});
 
     res.send({response: 'SUCCESS', message: 'Successfully added income!'});
