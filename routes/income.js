@@ -15,7 +15,7 @@ router.get('/getIncomeByMonth', (req, res) => {
   db.query('SELECT SUM(income) FROM income WHERE MONTH(TIMESTAMP) = MONTH(CURDATE());', (dbError, dbResult) => {
     if(dbError) return res.status(501).send({response: 'ERROR', message: dbError});
 
-    res.send({response: 'Success', totalIncomeAmount: Object.values(dbResult[0])});
+    res.send(Object.values(dbResult[0]));
   })
 });
 
