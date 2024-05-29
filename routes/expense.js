@@ -35,7 +35,7 @@ router.post('/addExpense', (req, res) => {
   })
 });
 
-router.delete('/removeExpense', (req, res) => {
+router.post('/removeExpense', (req, res) => {
   const requestData = {
     expenseId: req.body.id
   }

@@ -23,7 +23,7 @@ router.post('/addIncome', (req, res) => {
   })
 });
 
-router.delete('/removeIncome', (req, res) => {
+router.post('/removeIncome', (req, res) => {
   const requestData = {
     incomeId: req.body.id
   }
