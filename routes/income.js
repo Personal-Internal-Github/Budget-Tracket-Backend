@@ -11,6 +11,14 @@ router.get('/getIncome', (req, res) => {
   })
 });
 
+router.get('/getIncomeByMonth', (req, res) => {
+  db.query('SELECT SUM(income) FROM income WHERE MONTH(TIMESTAMP) = MONTH(CURDATE());', (dbError, dbResult) => {
+    if(dbError) return res.status(501).send({response: 'ERROR', message: dbError});
+
+    res.send({response: 'Success', totalIncomeAmount: Object.values(dbResult[0])});
+  })
+});
+
 router.post('/addIncome', (req, res) => {
   const requestData = {
     incomeValue: req.body.incomeValue

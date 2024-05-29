@@ -13,6 +13,14 @@ router.get('/getExpense', (req, res) => {
   })
 });
 
+router.get('/getExpenseByMonth', (req, res) => {
+  db.query('SELECT * FROM expense WHERE MONTH(TIMESTAMP) = MONTH(CURDATE());', (dbError, dbResult) => {
+    if (dbError) return res.status(501).send({response: 'ERROR', message: dbError});
+
+    res.send({response: 'Success', message: dbResult});
+  })
+});
+
 router.post('/addExpense', (req, res) => {
   const joiSchema = Joi.object({
     expenseAmount: Joi.number(),
@@ -37,7 +45,7 @@ router.post('/addExpense', (req, res) => {
 
 router.post('/removeExpense', (req, res) => {
   const requestData = {
-    expenseId: req.body.id
+    expenseId: req.body.expenseId
   }
 
   db.query('DELETE FROM expense where id = ?', requestData.expenseId, (dbError, dbResult) => {
