@@ -20,7 +20,7 @@ This Readme file will give you break down of the code and how to run it.
 
 The main point of the code is in "index.js" that located in the root folder. This file contain all the standard Node js application setup.
 
-!!PLEASE NOTE: The ".env" file is not included as it contains local database credentials. As for the table sql create code, it will be given seperated.
+!!PLEASE NOTE: The ".env" file is not included as it contains local database credentials. As for the table sql create code, it will be given seperately.
 
 2) Routes
 
