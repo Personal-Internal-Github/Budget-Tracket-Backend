@@ -6,14 +6,14 @@ I had tried to host this code in Netlify but after I follow the documentation, N
 
 This Readme file will give you break down of the code and how to run it.
 
-**How To Run In Local**
+# How To Run In Local
 1) Please go to "Code" above and download the source code.
 
 2) Open the code in local IDE, and run command "npm i".
 
 3) To run the code, run command "npm run dev".
 
-**Code Explanation**
+# Code Explanation
 1) Project Structure
 
 ![image](https://github.com/Personal-Internal-Github/Budget-Tracket-Backend/assets/60610270/70563883-0310-4e62-8757-0e17b1ffcb43)
